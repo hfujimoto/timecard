@@ -1,0 +1,2 @@
+module Work::RecordsHelper
+end
