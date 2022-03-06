@@ -3,18 +3,30 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.association :person %>
-    <%= f.input :record_date %>
-    <%= f.input :start1_time %>
-    <%= f.input :end1_time %>
-    <%= f.input :start2_time %>
-    <%= f.input :end2_time %>
-    <%= f.input :ot %>
-    <%= f.input :nt %>
+  <div class="row">
+    <div class="col">
+      <%= f.association :person %>
+      <%= f.association :work_category_shift_type %>
+    </div>
+    <div class="col">
+      <%= f.input :record_date %>
+    </div>
+    <div class="col">
+      <%= f.input :start1_time, :minute_step => 15, :input_html => {:style=> 'width: 70px'} %>
+    </div>
+    <div class="col">
+      <%= f.input :end1_time, :minute_step => 15, :input_html => {:style=> 'width: 70px'} %>
+    </div>
+    <div class="col">
+      <%= f.input :start2_time, :minute_step => 15, :input_html => {:style=> 'width: 70px'} %>
+    </div>
+    <div class="col">
+      <%= f.input :end2_time, :minute_step => 15, :input_html => {:style=> 'width: 70px'} %>
+    </div>
+
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => "btn btn-primary" %>
   </div>
 <% end %>

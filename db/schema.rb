@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_23_074412) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_06_060820) do
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -29,6 +29,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_23_074412) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "work_category_shift_types", force: :cascade do |t|
+    t.string "name"
+    t.integer "start_hour"
+    t.integer "end_hour"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "work_records", force: :cascade do |t|
     t.integer "person_id", null: false
     t.date "record_date"
@@ -36,6 +44,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_23_074412) do
     t.time "end1_time"
     t.time "start2_time"
     t.time "end2_time"
+    t.integer "work_category_shift_type_id"
+    t.integer "wt1"
+    t.integer "ot1"
+    t.integer "nt1"
+    t.integer "wt2"
+    t.integer "ot2"
+    t.integer "nt2"
+    t.integer "wt"
     t.integer "ot"
     t.integer "nt"
     t.datetime "created_at", null: false

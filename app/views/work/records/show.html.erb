@@ -3,8 +3,7 @@
 <%= render @work_record %>
 
 <div>
-  <%= link_to "Edit this record", edit_work_record_path(@work_record) %> |
-  <%= link_to "Back to records", work_records_path %>
-
-  <%= button_to "Destroy this record", @work_record, method: :delete %>
+  <%= link_to "Edit this record", edit_work_record_path(@work_record), :class => "btn btn-warning" %>
+  <%= link_to "Back to records", work_records_path, :class => "btn btn-secondary" %>
+  <%= button_to "Destroy this record", @work_record, method: :delete, :class => "btn btn-danger" %>
 </div>

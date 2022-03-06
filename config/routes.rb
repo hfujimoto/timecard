@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   namespace :work do
+    namespace :category do
+      resources :shift_types
+    end
     resources :records
   end
   resources :people

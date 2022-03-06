@@ -7,9 +7,16 @@ class CreateWorkRecords < ActiveRecord::Migration[7.0]
       t.time :end1_time
       t.time :start2_time
       t.time :end2_time
+      t.integer :work_category_shift_type_id
+      t.integer :wt1
+      t.integer :ot1
+      t.integer :nt1
+      t.integer :wt2
+      t.integer :ot2
+      t.integer :nt2
+      t.integer :wt
       t.integer :ot
       t.integer :nt
-
       t.timestamps
     end
   end

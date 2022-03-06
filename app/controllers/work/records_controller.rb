@@ -65,6 +65,6 @@ class Work::RecordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def work_record_params
-      params.require(:work_record).permit(:person_id, :record_date, :ot, :nt, :start1_time, :end1_time, :start2_time, :end2_time)
+      params.require(:work_record).permit(:person_id, :work_category_shift_type_id, :record_date, :ot, :nt, :start1_time, :end1_time, :start2_time, :end2_time)
     end
 end

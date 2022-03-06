@@ -1,13 +1,14 @@
 <div id="<%= dom_id record %>">
-  <h2><%= record.person.try(:name) || "N/A" %></h2>
-
   <table class="table">
     <tr>
+      <td><%= record.person.try(:name) || "N/A" %><br/>
+          <%= record.work_category_shift_type.try(:name) || "N/A" %></td>
       <td><%= record.record_date %></td>
       <td><%= record.start1_time.strftime('%H:%M') %> - <%= record.end1_time.strftime('%H:%M') %></td>
       <td><%= record.start2_time.strftime('%H:%M') %> - <%= record.end2_time.strftime('%H:%M') %></td>
-      <td><%= Time.at(record.ot).utc.strftime("%H:%M") %></td>
-      <td><%= Time.at(record.nt).utc.strftime("%H:%M") %></td>
+      <td><%= Time.at(record.wt1).utc.strftime("%H:%M") %></td>
+      <td><%= Time.at(record.wt2).utc.strftime("%H:%M") %></td>
+      <td><%= link_to "Edit", work_record_path(record) %></td>
     </tr>
   </table>
 </div>

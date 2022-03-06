@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Shift types</h1>
+
+<div id="work_category_shift_types">
+  <% @work_category_shift_types.each do |work_category_shift_type| %>
+    <%= render work_category_shift_type %>
+    <p>
+      <%= link_to "Show this shift type", work_category_shift_type %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New shift type", new_work_category_shift_type_path %>
